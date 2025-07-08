@@ -1,0 +1,258 @@
+/* Variáveis CSS para um tema escuro e organizado */
+:root {
+    --fundo-principal: #0f0f0f;
+    --fundo-secundario: #1a1a1a;
+    --cor-destaque: #ff4c29;
+    --texto-claro: #e0e0e0;
+    --texto-suave: #a0a0a0;
+}
+
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--texto-claro);
+    font-size: 16px;
+
+}
+
+/* --- Cabeçalho de Navegação --- */
+.cabecalho {
+    position: sticky;
+    /* Fixa o menu no topo ao rolar */
+    top: 0;
+    width: 100%;
+    background-color: var(--fundo-secundario);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    /* Garante que sempre estará sobreposto a div */
+}
+
+/**/
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+/* Contêiner centralizado */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    /* Responsividade da font */
+    color: var(--cor-destaque);
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu li a {
+    color: var(--texto-claro);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.menu li a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Estilos de Seção */
+.secao {
+    padding: 40px 0;
+    background-color: var(--fundo-principal);
+}
+
+/* Listas (Formação, Hobbies) */
+.secao ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+.secao ul li {
+    color: var(--texto-suave);
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+/* Enfeite antes dos itens das listas das seções */
+.secao ul li::before {
+    content: '•';
+    color: var(--cor-destaque);
+    position: absolute;
+    left: 0;
+}
+
+/* Alterna o fundo das seções para um melhor contraste visual */
+.secao:nth-of-type(odd) {
+    background-color: var(--fundo-secundario);
+}
+
+/* Títulos H2 (seção principal) e H3 (subtítulos) */
+h2 {
+    font-size: 2em;
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: var(--texto-claro);
+    margin-top: var(--espacamento);
+    margin-bottom: 10px;
+}
+
+/* Parágrafos e negritos */
+p {
+    color: var(--texto-suave);
+    margin-bottom: 15px;
+}
+
+/* --- Seção de apresentacação --- */
+.apresentacao-secao {
+    padding-top: 100px;
+    /* Garante que o conteúdo não fique escondido pelo topbar */
+    text-align: center;
+    min-height: 80vh;
+    /* Ocupa a maior parte da tela inicial */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fundo-principal);
+}
+
+.apresentacao-secao h2 {
+    font-size: 2.8em;
+    color: var(--texto-claro);
+    margin-bottom: 10px;
+}
+
+.destaque {
+    color: var(--cor-destaque);
+}
+
+/* --- Projetos --- */
+.projetos-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--fundo-principal);
+    padding: 20px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-leve);
+}
+
+/* --- Contato (Formulário) --- */
+#contato {
+    text-align: center;
+}
+
+
+
+.form-contato {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+    background-color: var(--fundo-principal);
+    padding: 20px;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-leve);
+}
+
+.form-grupo {
+    margin-bottom: 15px;
+}
+
+.form-grupo label {
+    display: block;
+    color: var(--texto-claro);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: var(--texto-claro);
+    font-size: 1em;
+}
+
+.form-grupo textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-enviar {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-destaque);
+    color: var(--texto-claro);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #e6391f;
+}
+
+/* Links sociais no contato */
+.links-sociais {
+    margin-top: 20px;
+}
+
+.links-sociais a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.2s ease;
+}
+
+.links-sociais a:hover {
+    color: var(--texto-claro);
+}
+
+/* --- Rodapé --- */
+.rodape {
+    background-color: var(--fundo-principal);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--texto-suave);
+    border-top: 1px solid #333;
+}
